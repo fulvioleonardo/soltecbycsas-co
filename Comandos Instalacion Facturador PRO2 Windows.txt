@@ -1,0 +1,21 @@
+- Instalacion herramientas locales
+	* Laragon
+	* Visual Studio Code
+	* API Instalada
+	* node 14
+
+- git clone https://gitlab.buho.la/facturalatam/co-facturadorpro2.git facturadorpro2
+- cd facturadorpro2
+- cp .env.example .env (Modificar los parametros necesarios)
+- rm composer.lock
+- composer install
+- php artisan config:cache && php artisan cache:clear
+- php artisan key:generate
+- Crear Base de datos como se especifico en el archivo .env
+- php artisan migrate --seed
+- chmod -R 777 storage
+- chmod -R 777 bootstrap/cache
+- chmod -R 777 vendor/mpdf/mpdf
+- php artisan storage:link
+- php artisan config:cache && php artisan config:clear && php artisan cache:clear
+

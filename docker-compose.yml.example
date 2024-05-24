@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+    nginx_image:
+        image: rash07/nginx
+        working_dir: /var/www/html
+        environment:
+            VIRTUAL_HOST: dominio, *.dominio
+        volumes:
+            - ./:/var/www/html
+            - /proxy/fpms/facturador_directory:/etc/nginx/sites-available
+        restart: always
+    fpm_image:
+        image: rash07/php-fpm:1.0
+        working_dir: /var/www/html
+        volumes:
+            - ./:/var/www/html
+        restart: always
+    mariadb_image:
+        image: mariadb:10.5.6
+        environment:
+            - MYSQL_USER=
+            - MYSQL_PASSWORD=
+            - MYSQL_DATABASE=
+            - MYSQL_ROOT_PASSWORD=
+            - MYSQL_PORT_HOST=
+        volumes:
+            - mysqldata_volume:/var/lib/mysql
+        ports:
+            - "3306:3306"
+        restart: always
+    redis_image:
+        image: redis:alpine
+        volumes:
+            - redisdata_volume:/data
+        restart: always
+    scheduling_image:
+        image: rash07/scheduling
+        working_dir: /var/www/html
+        volumes:
+            - ./:/var/www/html
+        restart: always
+
+networks:
+    default:
+        external:
+            name: proxynet
+
+volumes:
+    redisdata:
+        driver: "local"
+    mysqldata:
+        driver: "local"

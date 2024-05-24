@@ -1,0 +1,104 @@
+    @media (max-width:1440px) {
+        .sidebar-collapse .sidebar-list-item.active span {
+            visibility: hidden;
+            left: 100%;
+            width: auto;
+            opacity: 1;
+            -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, .06);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, .06)
+        }
+        .sidebar-collapse .sidebar-list-item.active:hover span {
+            visibility: visible;
+            left: 100%;
+            width: auto;
+            opacity: 1;
+            -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, .06);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, .06)
+        }
+    }
+
+    @media (max-width: 1024px) {
+        #document_form .v-dialog__content {
+            height: 50%;
+        }
+        #document .v-dialog__content {
+            max-height: 400px;
+            height: 70%;
+        }
+        #clients .v-dialog__content {
+            max-height: 400px;
+            margin-top: 15%;
+        }
+        #document .v-dialog__content {
+            margin-top: 35%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #clients .v-dialog__content {
+            max-height: 400px;
+            margin-top: 25%;
+        }
+        #items .v-dialog__content {
+            max-height: 400px; 
+            margin-top: 15%;       
+        }
+        #taxes .v-dialog__content {
+            max-height: 400px;
+            margin-top: 15%; 
+        }
+    }
+
+    @media (max-width: 480px) {
+        #document .v-dialog__content {
+            margin-top: 60%;
+        }
+    }
+
+    @media (max-width: 380px) {
+        #taxes .v-dialog__content {
+            margin-top: 20%;       
+        }
+        #document .v-dialog__content {
+            margin-top: 60%;
+        }
+    }
+
+    @media (max-width: 320px) {
+        #items .v-dialog__content {
+            margin-top: 25%;       
+        }
+    }
+
+.bee {
+    background-color: #00e3f6!important;
+    border-color: #00e3f6!important
+}
+
+.bee--text {
+    color: #00e3f6!important;
+    caret-color: #00e3f6!important
+}
+
+.bee.lighten {
+    background-color: #e0f7fa!important;
+    border-color: #e0f7fa!important
+}
+
+.bee.darker {
+    background-color: #00A6B5!important;
+    border-color: #00A6B5!important
+}
+
+.bee.darker:hover {
+    background-color: #09B3C2!important;
+    border-color: #09B3C2!important
+}
+
+.no-decoration {
+    text-decoration: none !important;
+}
+
+.logo {
+    margin-bottom: 40px;
+}

@@ -1,0 +1,14 @@
+- Acceso SSH al vps del facturador pro 2
+- Acceso al panel del dominio (Registrar dos registros txt)
+- dnschecker.org
+- Script actualizarSSL.sh
+
+sudo su
+certbot certonly --manual -d *.midominio.com -d midominio.com --agree-tos --no-bootstrap --manual-public-ip-logging-ok --preferred-challenges dns-01 --server https://acme-v02.api.letsencrypt.org/directory
+cp /etc/letsencrypt/live/midominio.com/privkey.pem /root/certs/midominio.com.key
+cp /etc/letsencrypt/live/midominio.com/cert.pem /root/certs/midominio.com.crt
+docker restart proxy_proxy_1
+docker ps
+docker exec -ti numerodelcontenedorphp bash
+cambiar http:// por https:// en APP_URL y cambiar el parametro FORCE_HTTPS a verdadero
+php artisan config:cache && php artisan config:clear && php artisan cache:clear
